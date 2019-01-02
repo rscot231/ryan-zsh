@@ -1,1 +1,8 @@
 # zsh
+
+Install:
+```
+mv ~/.zshrc ~/.zshrc.bak
+ln -s $(pwd)/.zshrc $HOME/.zshrc
+. ~/.zshrc
+```
