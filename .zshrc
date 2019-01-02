@@ -14,6 +14,7 @@ ZSH_THEME="rscot231"
 plugins=(
   git
   dotenv
+  rscot231-k8s
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -29,9 +30,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # SPLUNK STUFF
 alias cds="cd /Applications/Splunk/bin"
-
-# K8S STUFF
-alias kc="kubectl"
-export KUBECONFIG="$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/genuine-cat"
-if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
