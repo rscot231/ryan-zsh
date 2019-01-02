@@ -1,7 +1,8 @@
+export PROJECTS="$HOME/projects"
 export ZSH="/Users/rscott/.oh-my-zsh"
-ZSH_THEME="rscot231"
 DISABLE_AUTO_UPDATE="true"
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM="$PROJECTS/ryan-zsh/custom"
+ZSH_THEME="rscot231"
 
 plugins=(
   git
