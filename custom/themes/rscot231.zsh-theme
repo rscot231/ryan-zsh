@@ -3,7 +3,7 @@
 
 local return_code="%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})"
 
-function my_git_prompt_info() {
+function _my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   GIT_STATUS=$(git_prompt_status)
   [[ -n $GIT_STATUS ]] && GIT_STATUS=" $GIT_STATUS"
@@ -11,11 +11,13 @@ function my_git_prompt_info() {
 }
 
 function _k8s_info() {
-  local k8s=$(grep current-context ~/.kube/config | awk '{print $2}')
-  echo "%{$fg_bold[cyan]%}(k8s:$k8s)%{$reset_color%}"
+  if test -f ~/.kube/config; then
+    local k8s=$(grep current-context ~/.kube/config | awk '{print $2}')
+    echo "%{$fg_bold[cyan]%}(k8s:$k8s)%{$reset_color%} "
+  fi
 }
 
-PROMPT='%{$fg_bold[yellow]%}$(pwd)%{$reset_color%} $(_k8s_info) $(my_git_prompt_info)%{$reset_color%}%B»%b '
+PROMPT='%{$fg_bold[yellow]%}$(pwd)%{$reset_color%} $(_k8s_info)$(_my_git_prompt_info)%{$reset_color%}%B»%b '
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}(git:"
