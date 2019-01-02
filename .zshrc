@@ -3,6 +3,7 @@ export PROJECTS="$HOME/projects"
 export MVN_DIR="$PROJECTS/$(ls $PROJECTS | grep maven)"
 export PATH="$PATH:$MVN_DIR/bin"
 export PATH="$PATH:/Users/$USER/go/bin"
+export PATH="$PATH:$PROJECTS/bin"
 export PATH="$PATH:."
 
 # OH-MY-ZSH CONFIG
