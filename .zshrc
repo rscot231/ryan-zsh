@@ -13,8 +13,9 @@ ZSH_CUSTOM="$PROJECTS/ryan-zsh/custom"
 ZSH_THEME="rscot231"
 
 plugins=(
-  git
   dotenv
+  git
+  golang
   kubectl
   rscot231-k8s
 )
@@ -23,11 +24,13 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIAS STUFF
 alias cdp="cd $PROJECTS"
-alias cdg="cd $HOME/go/src"
 
 # NVM STUFF
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# GO STUFF
+export GOPATH=$HOME/go
 
 # SPLUNK STUFF
 alias cds="cd /Applications/Splunk/bin"
