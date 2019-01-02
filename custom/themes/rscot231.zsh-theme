@@ -1,5 +1,4 @@
-# ZSH Theme - Preview: https://cl.ly/f701d00760f8059e06dc
-# Thanks to gallifrey, upon whose theme this is based
+# ZSH Theme - inspired by the lukerandall theme
 
 local return_code="%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})"
 
