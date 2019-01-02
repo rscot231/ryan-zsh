@@ -14,13 +14,13 @@ ZSH_THEME="rscot231"
 plugins=(
   git
   dotenv
+  kubectl
   rscot231-k8s
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # ALIAS STUFF
-alias gs="git status"
 alias cdp="cd $PROJECTS"
 alias cdg="cd $HOME/go/src"
 
