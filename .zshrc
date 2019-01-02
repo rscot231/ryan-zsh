@@ -1,3 +1,4 @@
+# OH-MY-ZSH CONFIG
 export PROJECTS="$HOME/projects"
 export ZSH="/Users/rscott/.oh-my-zsh"
 DISABLE_AUTO_UPDATE="true"
@@ -28,7 +29,8 @@ alias kc="kubectl"
 export KUBECONFIG="$KUBECONFIG:/Users/rscott/.kube/config:/Users/rscott/.kube/genuine-cat"
 
 # PATH STUFF
-export PATH="$PATH:/Users/$USER/projects/apache-maven-3.6.0/bin"
+export MVN_DIR="$PROJECTS/$(ls $PROJECTS | grep maven)"
+export PATH="$PATH:$MVN_DIR/bin"
 export PATH="$PATH:/Users/$USER/go/bin"
 export PATH="$PATH:."
 
