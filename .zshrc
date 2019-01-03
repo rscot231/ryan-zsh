@@ -34,4 +34,4 @@ export GOPATH=$HOME/go
 
 # SPLUNK STUFF
 alias cds="cd /Applications/Splunk/bin"
-
+export KUBECONFIG="$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/genuine-cat"
