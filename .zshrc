@@ -15,6 +15,7 @@ ZSH_THEME="rscot231"
 plugins=(
   dotenv
   git
+  git-prompt
   golang
   kubectl
   rscot231-k8s
