@@ -11,8 +11,9 @@ function _my_git_prompt_info() {
 
 function _k8s_info() {
   if test -f ~/.kube/config; then
-    local k8s=$(grep current-context ~/.kube/config | awk '{print $2}')
-    echo "%{$fg_bold[cyan]%}(k8s:$k8s)%{$reset_color%} "
+    local k8s=$(grep current-context `find ~/.kube -maxdepth 1 -type f` | awk '{print $2}')
+    local ns=$(grep "name: $k8s" `find ~/.kube -maxdepth 1 -type f` -A2 -B2 | grep namespace | awk '{print $3}')
+    echo "%{$fg_bold[cyan]%}(k8s:$k8s:$ns)%{$reset_color%} "
   fi
 }
 
