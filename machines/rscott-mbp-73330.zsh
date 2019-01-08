@@ -9,3 +9,9 @@ plugins+=(
 
 # GO STUFF
 export GOPATH=$HOME/go
+
+#ALIASES
+alias okt="okta-kube-token"
+alias oa="okta-aws"
+alias oal="okta-aws-login"
+alias odl="okta-docker-login"
