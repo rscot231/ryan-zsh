@@ -13,7 +13,7 @@ function _k8s_info() {
   if test -f ~/.kube/config; then
     local k8s=$(grep current-context `find ~/.kube -maxdepth 1 -type f` | grep -v \"\" | awk '{print $2}')
     local ns=$(grep "name: $k8s" `find ~/.kube -maxdepth 1 -type f` -A2 -B2 | grep namespace | awk '{print $3}')
-    echo "%{$fg_bold[cyan]%}(k8s:$k8s:$ns)%{$reset_color%} "
+    echo "%{$fg_bold[cyan]%}k8s:($k8s:$ns)%{$reset_color%} "
   fi
 }
 
@@ -21,7 +21,7 @@ PROMPT='%{$fg_bold[yellow]%}$(pwd)%{$reset_color%} $(_k8s_info)$(_my_git_prompt_
 »%b '
 RPS1="${return_code}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}(git:"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}git:("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%%"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
