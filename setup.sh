@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $(pwd)/.zshrc $HOME/.zshrc
