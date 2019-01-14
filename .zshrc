@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIAS STUFF
 alias cdp="cd $PROJECTS"
+alias ip="ifconfig | grep broadcast | awk '{print \$6}'"
 
 # NVM STUFF
 export NVM_DIR="$HOME/.nvm"
