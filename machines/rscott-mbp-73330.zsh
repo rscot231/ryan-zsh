@@ -1,4 +1,4 @@
-export KUBECONFIG="$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/genuine-cat"
+export KUBECONFIG="$HOME/.kube/config"
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 
 plugins+=(
@@ -15,3 +15,5 @@ alias okt="okta-kube-token"
 alias oa="okta-aws"
 alias oal="okta-aws-login"
 alias odl="okta-docker-login"
+
+alias mk="time minikube"
