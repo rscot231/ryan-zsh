@@ -25,8 +25,13 @@ plugins=(
 # SOURCE oz-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# ALIAS STUFF
-alias cdp="cd $PROJECTS"
+# FUNCTIONS
+cdp()
+{
+    cd $PROJECTS/$1
+}
+
+# ALIASES
 alias ip="ifconfig | grep broadcast | awk '{print \$6}'"
 
 # NVM STUFF
