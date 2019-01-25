@@ -10,7 +10,7 @@ function _my_git_prompt_info() {
 }
 
 function _k8s_info() {
-  if test -f $KUBECONFIG; then
+  if test -f "$KUBECONFIG"; then
     local k8s=$(grep current-context $KUBECONFIG | grep -v \"\" | awk '{print $2}')
     local ns=$(grep "name: $k8s" $KUBECONFIG -A2 -B2 | grep namespace | awk '{print $NF}')
     echo "%{$fg_bold[cyan]%}k8s:($k8s:$ns)%{$reset_color%} "
@@ -30,4 +30,3 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="*"
 ZSH_THEME_GIT_PROMPT_RENAMED="~"
 ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_UNMERGED="?"
-
