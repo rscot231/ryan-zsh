@@ -17,6 +17,7 @@ plugins=(
   dotenv
   git
   git-prompt
+  cdp
 )
 
 # MACHINE SPECIFIC STUFF - DO BEFORE SOURCING oh-my-zsh SO PLUGINS CAN BE INCLUDED
@@ -24,17 +25,6 @@ plugins=(
 
 # SOURCE oz-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# FUNCTIONS
-cdp()
-{
-    cd $PROJECTS/$1
-}
-_cdp()
-{
-    compadd `ls $PROJECTS`
-}
-compdef _cdp cdp
 
 # ALIASES
 alias ip="ifconfig | grep broadcast | awk '{print \$6}'"
