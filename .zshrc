@@ -30,6 +30,11 @@ cdp()
 {
     cd $PROJECTS/$1
 }
+_cdp()
+{
+    compadd `ls $PROJECTS`
+}
+compdef _cdp cdp
 
 # ALIASES
 alias ip="ifconfig | grep broadcast | awk '{print \$6}'"
