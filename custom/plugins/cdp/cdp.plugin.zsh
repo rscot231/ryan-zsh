@@ -1,5 +1,3 @@
-echo HI
-
 cdp()
 {
     cd $PROJECTS/$1
