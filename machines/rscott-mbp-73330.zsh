@@ -17,3 +17,5 @@ alias oal="okta-aws-login"
 alias odl="okta-docker-login"
 
 alias mk="time minikube"
+alias mks="mk start --memory 4096 --cpus 4"
+
