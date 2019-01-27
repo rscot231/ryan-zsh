@@ -4,3 +4,5 @@ brew install ag
 brew tap caskroom/versions
 brew cask install java8
 brew install maven
+brew install npm
+
