@@ -5,6 +5,7 @@ plugins+=(
   golang
   kubectl
   rscot231-k8s
+  cdg
 )
 
 # GO STUFF
