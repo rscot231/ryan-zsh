@@ -1,13 +1,8 @@
-_ADDONS=$GOPATH/src/cd.splunkdev.com/kub/addons
+if [ -z "$QBEC_ROOT" ]; then
+  echo "QBEC_ROOT not set. Either set QBEC_ROOT or remove the qbec plugin."
+fi
 
-q()
-{
-     pushd $_ADDONS &> /dev/null
-     qbec "$@"
-     popd &> /dev/null
-}
-
-function _q {
+function _qbec {
   local line state context state_descr
 
   _arguments \
@@ -56,12 +51,11 @@ function _arg4 {
 }
 
 function _clusterList {
-  compadd `find $_ADDONS/environments -depth 1 -type d | xargs -n 1 basename`
+  compadd `find $QBEC_ROOT/environments -depth 1 -type d | xargs -n 1 basename`
 }
 
 function _componentList {
-  compadd `ls $_ADDONS/components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
+  compadd `ls $QBEC_ROOT/components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
 }
 
-compdef _q q
-compdef _q qbec
+compdef _qbec qbec
