@@ -11,6 +11,7 @@ plugins+=(
 
 # GO STUFF
 export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
 
 #QBEC
 export QBEC_ROOT=$GOPATH/src/cd.splunkdev.com/kub/addons
