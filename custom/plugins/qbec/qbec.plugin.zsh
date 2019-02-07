@@ -51,7 +51,7 @@ function _arg4 {
 }
 
 function _clusterList {
-  compadd `find $QBEC_ROOT/environments -depth 1 -type d | xargs -n 1 basename`
+  compadd `find "$QBEC_ROOT/environments" -maxdepth 1 -type d | xargs -n 1 basename`
 }
 
 function _componentList {
