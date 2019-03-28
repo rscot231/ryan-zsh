@@ -4,6 +4,6 @@ cdg()
 }
 _cdg()
 {
-    compadd `ls $GOPATH/src`
+    compadd `pushd $GOPATH/src > /dev/null && find . -type d -exec test -e '{}/.git' ';' -print -prune | cut -c 3- && popd > /dev/null`
 }
 compdef _cdg cdg
