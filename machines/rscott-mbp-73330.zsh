@@ -27,3 +27,9 @@ alias odl="okta-docker-login"
 
 alias mk="time minikube"
 alias mks="mk start --memory 4096 --cpus 4"
+
+export IAC_DEVMODE=1
+export IAC_DB_HOST=localhost
+export IAC_DB=identity
+export IAC_DB_USER=splunk
+export IAC_DB_PASSWORD=password
