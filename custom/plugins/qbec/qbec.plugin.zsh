@@ -1,7 +1,3 @@
-if [ -z "$QBEC_ROOT" ]; then
-  echo "QBEC_ROOT not set. Either set QBEC_ROOT or remove the qbec plugin."
-fi
-
 function _qbec {
   local line state context state_descr
 
@@ -51,11 +47,11 @@ function _arg4 {
 }
 
 function _clusterList {
-  compadd `find "$QBEC_ROOT/environments" -maxdepth 1 -type d | xargs -n 1 basename`
+  compadd `find "./environments" -maxdepth 1 | xargs -n 1 basename -s .libsonnet`
 }
 
 function _componentList {
-  compadd `ls $QBEC_ROOT/components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
+  compadd `ls ./components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
 }
 
 compdef _qbec qbec
