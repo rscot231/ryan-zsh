@@ -16,9 +16,6 @@ export PATH="$PATH:$GOPATH/bin"
 # RUBY STUFF
 eval "$(rbenv init -)"
 
-#QBEC
-export QBEC_ROOT=$GOPATH/src/cd.splunkdev.com/kub/addons
-
 #ALIASES
 alias okt="okta-kube-token"
 alias oa="okta-aws"
