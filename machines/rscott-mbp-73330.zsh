@@ -19,9 +19,14 @@ eval "$(rbenv init -)"
 #ALIASES
 alias okt="okta-kube-token"
 alias oa="okta-aws"
-alias oal="okta-aws-login"
 alias odl="okta-docker-login"
 
+function oal()
+{
+  eval $(okta-aws-login)
+}
+
+alias tf="terraform"
 alias mk="time minikube"
 alias mks="mk start --memory 4096 --cpus 4"
 
