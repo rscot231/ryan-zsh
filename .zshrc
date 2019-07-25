@@ -15,6 +15,7 @@ plugins=(
   git
   git-prompt
   cdp
+  temper
 )
 
 # MACHINE SPECIFIC STUFF - DO BEFORE SOURCING oh-my-zsh SO PLUGINS CAN BE INCLUDED

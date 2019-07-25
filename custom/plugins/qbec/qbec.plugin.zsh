@@ -47,11 +47,15 @@ function _arg4 {
 }
 
 function _clusterList {
-  compadd `find "./environments" -maxdepth 1 | xargs -n 1 basename -s .libsonnet`
+  if [ -d ./environments ]; then
+    compadd `find "./environments" -maxdepth 1 | xargs -n 1 basename -s .libsonnet`
+  fi
 }
 
 function _componentList {
-  compadd `ls ./components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
+  if [ -d ./components ]; then
+    compadd `ls ./components/*.jsonnet | xargs -n 1 basename | cut -d'.' -f1`
+  fi
 }
 
 compdef _qbec qbec
