@@ -7,7 +7,7 @@ temper()
 
     echo "Setting up $1. ctrl+c to stop."
     ~/.temper/$1.sh
-    trap "echo; echo Cleaning up $1; ~/.temper/$1.cleanup.sh; return;" INT
+    trap "echo; echo Cleaning up $1; ~/.temper/$1.cleanup.sh; trap - INT; return;" INT
     while true; do sleep 5; done
 }
 _temper()
