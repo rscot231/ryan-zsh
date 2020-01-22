@@ -2,6 +2,10 @@
 export PROJECTS="$HOME/projects"
 export PATH="$PATH:$PROJECTS/bin"
 export PATH="$PATH:."
+path=(
+  /usr/local/{bin,sbin}
+  $path[@]
+)
 
 # BASE oh-my-zsh CONFIG
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,6 +34,3 @@ alias ip="ifconfig | grep broadcast | awk '{print \$6}'"
 # NVM STUFF
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-
-# SPLUNK STUFF
-alias cds="cd /Applications/Splunk/bin"

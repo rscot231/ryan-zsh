@@ -30,4 +30,11 @@ alias tf="terraform"
 alias mk="time minikube"
 alias mks="mk start --memory 4096 --cpus 4"
 
+function makedockerboot()
+{
+  echo "after running this press up, left, right, down, then choose continue"
+  sleep 3
+  screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+}
+
 export GOPRIVATE=cd.splunkdev.com
