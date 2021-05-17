@@ -19,7 +19,7 @@ function _k8s_info() {
 
 local host_color=${HOST_COLOR:-green}
 local host_name=${HOST_NAME}
-PROMPT='%{$fg_bold[$host_color]%}$host_name%{$reset_color%} %{$fg_bold[yellow]%}$(print -P %~)%{$reset_color%} $(_k8s_info)$(_my_git_prompt_info)%{$reset_color%}%B
+PROMPT='%{$fg_bold[yellow]%}$(print -P %~)%{$reset_color%} $(_k8s_info)$(_my_git_prompt_info)%{$reset_color%}%B %{$fg_bold[$host_color]%}$host_name%{$reset_color%}
 »%b '
 RPS1="${return_code}"
 
