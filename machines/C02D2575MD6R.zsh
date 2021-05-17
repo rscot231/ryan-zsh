@@ -11,11 +11,10 @@ plugins+=(
 
 # GO STUFF
 export GOPATH=$HOME/go
+export GOPRIVATE=cd.splunkdev.com
 export PATH="$PATH:$GOPATH/bin"
 
-#ALIASES
-alias okt="okta-kube-token"
-alias oa="okta-aws"
+# OKTA STUFF
 alias odl="okta-docker-login"
 
 function oal()
@@ -23,6 +22,13 @@ function oal()
   eval $(okta-aws-login)
 }
 
+function okt() {
+    OKTA_PASSWORD=$(echo -n $OKTA_BASE64 | base64 -D) okta-kube-token
+}
+
+export OKTA_MFA_OPTION=push
+
+# OTHER ALIASES
 alias tf="terraform"
 
 function makedockerboot()
@@ -32,4 +38,3 @@ function makedockerboot()
   screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
 }
 
-export GOPRIVATE=cd.splunkdev.com

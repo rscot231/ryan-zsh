@@ -1,6 +1,15 @@
 # zsh
 
-Install:
+Install pre-reqs:
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# optional
+brew tap toolbox/tap git@cd.splunkdev.com:toolbox/homebrew-tap.git
+```
+
+Install ryan-zsh:
 ```
 mkdir ~/projects
 cd ~/projects
