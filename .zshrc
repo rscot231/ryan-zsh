@@ -24,6 +24,7 @@ plugins=(
 
 # MACHINE SPECIFIC STUFF - DO BEFORE SOURCING oh-my-zsh SO PLUGINS CAN BE INCLUDED
 [ -s "$PROJECTS/ryan-zsh/machines/$HOST.zsh" ] && . "$PROJECTS/ryan-zsh/machines/$HOST.zsh"
+[ -s "$HOME/.secrets" ] && . "$HOME/.secrets"
 
 # SOURCE oz-my-zsh
 source $ZSH/oh-my-zsh.sh
