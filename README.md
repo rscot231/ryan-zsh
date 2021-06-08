@@ -6,6 +6,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install go
+brew install jsonnet-bundler``
 brew install jq
 brew install ag
 brew tap caskroom/versions

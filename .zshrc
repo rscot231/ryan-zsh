@@ -20,6 +20,7 @@ plugins=(
   git-prompt
   cdp
   temper
+  idea
 )
 
 # MACHINE SPECIFIC STUFF - DO BEFORE SOURCING oh-my-zsh SO PLUGINS CAN BE INCLUDED

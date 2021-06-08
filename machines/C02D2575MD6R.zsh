@@ -1,5 +1,5 @@
 export KUBECONFIG="$HOME/.kube/config"
-export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+export PATH="$HOME/.rbenv/shims:$PATH:$HOME/Library/Python/3.7/bin"
 
 plugins+=(
   golang
@@ -15,15 +15,17 @@ export GOPRIVATE=cd.splunkdev.com
 export PATH="$PATH:$GOPATH/bin"
 
 # OKTA STUFF
-alias odl="okta-docker-login"
+function odl() {
+  OKTA_PASSWORD=$(echo -n $OKTA_BASE64 | base64 -D) okta-docker-login
+}
 
 function oal()
 {
-  eval $(okta-aws-login)
+  OKTA_PASSWORD=$(echo -n $OKTA_BASE64 | base64 -D) eval $(okta-aws-login)
 }
 
 function okt() {
-    OKTA_PASSWORD=$(echo -n $OKTA_BASE64 | base64 -D) okta-kube-token
+  OKTA_PASSWORD=$(echo -n $OKTA_BASE64 | base64 -D) okta-kube-token
 }
 
 export OKTA_MFA_OPTION=push
